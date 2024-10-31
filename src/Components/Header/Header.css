@@ -1,0 +1,44 @@
+.header {
+  margin: 30px auto;
+  height: 34vw;
+  background: url("./header_img.png") no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  position: absolute;
+  flex-direction: row; /* Ensures horizontal alignment */
+  align-items: center; /* Vertically centers items in the row */
+  justify-content: flex-start; /* Aligns items to the start of the container */
+  gap: 2vw;
+  width: 100%; /* Take full width */
+  bottom: 2rem; /* Position at bottom */
+  left: 0;
+  padding: 0 6vw; /* Add padding instead of left margin for better control */
+}
+
+/* For the text container if you have one */
+.header-text {
+  max-width: 100%; /* Limit text width */
+}
+
+/* For the View-Menu button */
+.view-menu-btn {
+  margin-left: auto; /* This will push the button to the right */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: 1rem;
+    gap: 1rem;
+  }
+
+  .header-text {
+    max-width: 80%;
+  }
+}
