@@ -1,44 +1,43 @@
 .header {
-  margin: 30px auto;
   height: 34vw;
-  background: url("./header_img.png") no-repeat;
-  background-size: contain;
+  margin: 30px auto;
+  background: url("/header_img.png") no-repeat;
+  background-size: cover;
+  background-position: center;
   position: relative;
-}
-
-.header-content {
   display: flex;
-  position: absolute;
-  flex-direction: row; /* Ensures horizontal alignment */
-  align-items: center; /* Vertically centers items in the row */
-  justify-content: flex-start; /* Aligns items to the start of the container */
-  gap: 2vw;
-  width: 100%; /* Take full width */
-  bottom: 2rem; /* Position at bottom */
-  left: 0;
-  padding: 0 6vw; /* Add padding instead of left margin for better control */
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5vw;
 }
 
-/* For the text container if you have one */
-.header-text {
-  max-width: 100%; /* Limit text width */
+.header-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Use flex-start for proper alignment */
+  gap: 1.5vw;
+  max-width: 50%;
+  text-align: left;
+  animation: fadeIn 39s ease-in-out;
 }
 
-/* For the View-Menu button */
-.view-menu-btn {
-  margin-left: auto; /* This will push the button to the right */
+.header-contents h2 {
+  font-weight: 500;
+  font-size: max(4.5vw, 22px);
+  color: blue;
+}
+.header-contents button {
+  border: none;
+  color: black;
+  font-weight: 500;
+  padding: 0.5vw 1.3vw; /* Adjust padding for a more rectangular look */
+  background: #e67e22;
+  font-size: max(1vw, 13px);
+  border-radius: 30px; /* Use a smaller value for rounded corners */
+  cursor: pointer; /* Add cursor pointer for better UX */
+  transition: background-color 0.3s; /* Smooth background transition */
 }
 
-/* Responsive design */
-@media screen and (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    bottom: 1rem;
-    gap: 1rem;
-  }
-
-  .header-text {
-    max-width: 80%;
-  }
+.header-contents button:hover {
+  background: #f5b041; /* Change background on hover for feedback */
 }
