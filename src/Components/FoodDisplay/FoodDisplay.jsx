@@ -18,16 +18,21 @@ const FoodDisplay = ({ category }) => {
     );
   }
 
+  // Filter the food items based on category
+  const filteredFoodList = food_list.filter(
+    (item) => category === "All" || category === item.category,
+  );
+
   return (
     <div className="food-display" id="food-display">
       <h2>Top Dishes Near You</h2>
       <div className="food-display-list">
-        {food_list.length === 0 ? (
+        {filteredFoodList.length === 0 ? (
           <p>No dishes found in this category.</p>
         ) : (
-          food_list.map((item, index) => (
+          filteredFoodList.map((item, index) => (
             <FoodItem
-              key={item._id || index} // Prefer using item._id if available
+              key={item._id || index}
               id={item._id}
               name={item.name || "Unnamed Dish"}
               description={item.description || "No description available"}
