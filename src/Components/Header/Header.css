@@ -1,43 +1,187 @@
 .header {
-  height: 34vw;
-  margin: 30px auto;
+  height: 85vh; /* Changed to viewport height for better scaling */
+  min-height: 500px;
+  margin: 20px auto;
   background: url("/header_img.png") no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding-bottom: 5vw;
+  align-items: center; /* Changed to center for better layout */
+  padding: 20px;
+  border-radius: 20px; /* Added rounded corners */
+  overflow: hidden; /* For border radius */
+}
+
+/* Optional overlay for better text readability */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  pointer-events: none;
 }
 
 .header-contents {
+  position: relative; /* For overlay */
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Use flex-start for proper alignment */
-  gap: 1.5vw;
-  max-width: 50%;
+  align-items: flex-start;
+  gap: 25px; /* Changed to fixed pixels for consistency */
+  max-width: 600px; /* Fixed max-width instead of percentage */
   text-align: left;
-  animation: fadeIn 39s ease-in-out;
+  animation: fadeIn 1s ease-in-out; /* Shortened animation time */
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1); /* Optional: slight background */
+  backdrop-filter: blur(5px); /* Optional: blur effect */
+  border-radius: 15px;
 }
 
 .header-contents h2 {
-  font-weight: 500;
-  font-size: max(4.5vw, 22px);
+  font-weight: 600;
+  font-size: clamp(28px, 5vw, 52px);
   color: blue;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .header-contents button {
   border: none;
   color: black;
-  font-weight: 500;
-  padding: 0.5vw 1.3vw; /* Adjust padding for a more rectangular look */
+  font-weight: 600;
+  padding: 15px 35px;
   background: #e67e22;
-  font-size: max(1vw, 13px);
-  border-radius: 30px; /* Use a smaller value for rounded corners */
-  cursor: pointer; /* Add cursor pointer for better UX */
-  transition: background-color 0.3s; /* Smooth background transition */
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .header-contents button:hover {
-  background: #f5b041; /* Change background on hover for feedback */
+  background: #f5b041;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.header-contents button:active {
+  transform: translateY(0);
+}
+
+/* Keyframes for fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media screen and (min-width: 1441px) {
+  .header {
+    max-width: 1400px;
+    height: 70vh;
+  }
+
+  .header-contents {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    height: 75vh;
+    margin: 15px auto;
+    border-radius: 15px;
+  }
+
+  .header-contents {
+    max-width: 550px;
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 70vh;
+    margin: 10px auto;
+    border-radius: 12px;
+    background-position: 70% center; /* Adjust background position for mobile */
+  }
+
+  .header-contents {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .header-contents h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 80vh;
+    min-height: 400px;
+    margin: 5px auto;
+    border-radius: 8px;
+  }
+
+  .header-contents {
+    padding: 15px;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .header-contents button {
+    width: 100%; /* Full width button on mobile */
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .header::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+}
+
+/* Handle very small screens */
+@media screen and (max-width: 360px) {
+  .header {
+    height: 90vh;
+    min-height: 350px;
+  }
+
+  .header-contents h2 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .header {
+    height: 100vh;
+  }
+
+  .header-contents {
+    gap: 15px;
+    padding: 15px;
+  }
 }

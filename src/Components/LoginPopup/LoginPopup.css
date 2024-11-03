@@ -1,0 +1,127 @@
+/*.login-popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #00000090;
+  display: grid;
+}*/
+
+/* Full-screen overlay to darken the background */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation */
+  z-index: 1000;
+}
+
+/* Container styling for the popup */
+.login-popup-container {
+  background: #fff;
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out; /* Apply fade-in animation to the container */
+}
+
+/* Title section styling */
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.login-popup-title h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Close icon styling */
+.close-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+/* Input styling */
+.login-popup-inputs input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Checkbox and policy agreement styling */
+.login-popup-condition {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.login-popup-condition input {
+  margin-right: 0.5rem;
+}
+
+.login-popup-condition p {
+  margin: 0;
+}
+
+/* Toggle link styling */
+.login-popup p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+.login-popup p span {
+  color: #4caf50;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

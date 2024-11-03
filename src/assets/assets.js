@@ -1,4 +1,5 @@
 import basket_icon from "./basket_icon.png";
+import shopping from "./shopping.png";
 import Food_logo from "./Food_logo.gif";
 import Feast_logo from "./Feast_logo.png";
 import header_img from "./header_img.png";
@@ -64,6 +65,7 @@ import parcel_icon from "./parcel_icon.png";
 export const assets = {
   Food_logo,
   Feast_logo,
+  shopping,
   basket_icon,
   header_img,
   search_icon,

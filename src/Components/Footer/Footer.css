@@ -5,9 +5,9 @@
   flex-direction: column;
   color: white;
   background-color: orange;
-  gap: 8px; /* Reduced for a tighter layout */
-  padding: 8px 6vw; /* Reduced overall padding */
-  padding-top: 20px; /* Reduced top padding */
+  gap: 8px;
+  padding: 8px 6vw;
+  padding-top: 20px;
   margin-top: 100px;
 }
 
@@ -15,20 +15,20 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 8px; /* Reduced gap between logos */
-  margin-bottom: 5px; /* Adds a small margin */
+  gap: 8px;
+  margin-bottom: 5px;
 }
 
 /* Logo Styles */
 .company-logo {
-  width: 80px; /* Reduced from 120px */
+  width: 80px;
   height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 
 .company-logo-text {
-  width: 140px; /* Reduced from 180px */
+  width: 140px;
   height: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
@@ -39,28 +39,28 @@
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 20px; /* Reduced for compactness */
-  padding-bottom: 8px; /* Reduces bottom padding */
+  gap: 20px;
+  padding-bottom: 8px;
 }
 
 .footer-content-left,
 .footer-content-right,
 .footer-content-center {
   display: flex;
-  gap: 5px; /* Reduced for closer spacing */
+  gap: 5px;
   flex-direction: column;
   align-items: start;
 }
 
 /* Footer Text and List Styles */
 .footer p {
-  font-size: 0.8rem; /* Reduced font size */
-  line-height: 1.3; /* Reduced line spacing */
+  font-size: 0.8rem;
+  line-height: 1.3;
   margin-bottom: 5px;
 }
 
 .footer h2 {
-  font-size: 1rem; /* Reduced font size */
+  font-size: 1rem;
   margin-bottom: 3px;
 }
 
@@ -69,21 +69,22 @@
   cursor: pointer;
   font-size: 0.8rem;
   margin-bottom: 3px;
-  transition: color 0.3s ease; /* Smooth transition for hover */
+  transition: color 0.3s ease;
 }
 
 .footer li:hover {
-  color: #000000; /* Change color on hover */
+  color: #000000;
 }
 
 /* Social Icons */
 .footer-social-icons {
   display: flex;
-  gap: 8px; /* Reduced gap */
+  gap: 8px;
+  flex-wrap: wrap; /* Added for better mobile layout */
 }
 
 .footer-social-icons img {
-  width: 25px; /* Reduced size */
+  width: 25px;
   height: 25px;
   object-fit: contain;
   cursor: pointer;
@@ -93,16 +94,147 @@
 }
 
 .footer-social-icons img:hover {
-  filter: brightness(0); /* Turns black on hover */
-  transform: scale(1.1); /* Slightly enlarges icon */
+  filter: brightness(0);
+  transform: scale(1.1);
 }
 
 /* Footer Bottom Section */
 .footer-copy-right {
   width: 100%;
   text-align: center;
-  margin-top: 5px; /* Reduced margin */
-  padding-top: 5px; /* Reduced padding */
+  margin-top: 5px;
+  padding-top: 5px;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem; /* Slightly smaller font for compactness */
+  font-size: 0.8rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 8px 4vw;
+    margin-top: 80px;
+  }
+
+  .footer-content {
+    gap: 15px;
+  }
+
+  .company-logo {
+    width: 70px;
+  }
+
+  .company-logo-text {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 8px 3vw;
+    margin-top: 60px;
+    gap: 12px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr; /* Change to 2 columns */
+    gap: 20px 10px;
+  }
+
+  .footer-content-left {
+    grid-column: 1 / -1; /* Make it full width */
+    text-align: center;
+    align-items: center;
+  }
+
+  .company-logo {
+    width: 60px;
+  }
+
+  .company-logo-text {
+    width: 100px;
+  }
+
+  .footer h2 {
+    font-size: 0.95rem;
+  }
+
+  .footer p,
+  .footer li {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 8px 15px;
+    margin-top: 40px;
+    gap: 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-content-left,
+  .footer-content-right,
+  .footer-content-center {
+    align-items: center;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .company-logo {
+    width: 50px;
+  }
+
+  .company-logo-text {
+    width: 90px;
+  }
+
+  .footer-social-icons {
+    justify-content: center;
+  }
+
+  .footer-copy-right {
+    font-size: 0.7rem;
+    padding: 8px 0;
+  }
+
+  /* Increase touch target size for mobile */
+  .footer li {
+    padding: 4px 0;
+    margin-bottom: 5px;
+  }
+
+  .footer-social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Handle very small screens */
+@media screen and (max-width: 320px) {
+  .footer {
+    padding: 8px 10px;
+    margin-top: 30px;
+  }
+
+  .footer-content {
+    gap: 20px;
+  }
+
+  .footer h2 {
+    font-size: 0.9rem;
+  }
+
+  .footer p,
+  .footer li,
+  .footer-copy-right {
+    font-size: 0.7rem;
+  }
 }
