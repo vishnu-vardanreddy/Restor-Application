@@ -18,8 +18,9 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div className="navbar">
-      <img src={assets.Food_logo} className="logo" alt="Logo" />
-
+      <Link to="/">
+        <img src={assets.Food_logo} className="logo" alt="Logo" />
+      </Link>
       {/* Combined menu for both desktop and mobile */}
       <ul className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
         <li>
@@ -65,16 +66,17 @@ const Navbar = ({ setShowLogin }) => {
           <img src={assets.search_icon} alt="Search" />
         </div>
         <div className="navbar-shopping-icon">
-          <img
-            src={assets.shopping}
-            className="shopping-icon"
-            alt="Shopping Cart"
-          />
-          <div className="dot"></div>
+          <Link to="/cart">
+            <img
+              src={assets.shopping}
+              className="shopping-icon"
+              alt="Shopping Cart"
+            />
+          </Link>
+          <span className="dot" />
         </div>
         <button onClick={() => setShowLogin(true)}>SignIn</button>
 
-        {/* Hamburger Menu */}
         <div
           className={`hamburger ${isMenuOpen ? "open" : ""}`}
           onClick={toggleMenu}

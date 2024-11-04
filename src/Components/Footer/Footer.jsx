@@ -1,8 +1,15 @@
 import React from "react";
 import "./Footer.css";
 import { assets } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="footer" id="footer">
       <div className="footer-content">
@@ -12,7 +19,11 @@ const Footer = () => {
             src={assets.Food_logo}
             alt="Company Logo"
           />
-          <img src={assets.Feast_logo} alt="" className="company-logo-text" />
+          <img
+            src={assets.Feast_logo}
+            alt="Feast Logo"
+            className="company-logo-text"
+          />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
             cupiditate corrupti doloribus tempora, quas eligendi ab obcaecati
@@ -28,18 +39,24 @@ const Footer = () => {
         <div className="footer-content-center">
           <h2>COMPANY</h2>
           <ul>
-            <li>Home</li>
-            <li>AboutUS</li>
-            <li>Delivery</li>
-            <li>Privacy policy</li>
+            <li onClick={() => navigateTo("/")}>Home</li>
+            <li onClick={() => navigateTo("/about")}>About Us</li>
+            <li onClick={() => navigateTo("/delivery")}>Delivery</li>
+            <li onClick={() => navigateTo("/privacy-policy")}>
+              Privacy Policy
+            </li>
           </ul>
         </div>
         <div className="footer-content-right">
           <h2>GET IN TOUCH</h2>
-          <ul>
-            <li>+91-9900887766</li>
-            <li>vodocodo@gmail.com</li>
-          </ul>
+          <address>
+            <ul>
+              <li>+91-9900887766</li>
+              <li>
+                <a href="mailto:vodocodo@gmail.com">vodocodo@gmail.com</a>
+              </li>
+            </ul>
+          </address>
         </div>
       </div>
       <p className="footer-copy-right">

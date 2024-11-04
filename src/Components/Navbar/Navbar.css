@@ -39,9 +39,18 @@
 
 .navbar-menu a.active {
   color: tomato;
-  font-weight: bold;
+  font-weight: italic;
+  border: 1px solid tomato;
+  border-radius: 50px;
+  padding: 10px 5px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
 }
-
+.nav-item.active::after,
+.nav-item:hover::after {
+  transform: scaleX(1);
+}
 /* Right side elements */
 .navbar-right {
   display: flex;
@@ -69,8 +78,8 @@
 
 .dot {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background-color: tomato;
   border-radius: 50%;
   top: -2px;
@@ -78,27 +87,26 @@
   border: 2px solid white;
 }
 
-button {
-  border: 2px solid #e67e22 !important;
-  background-color: #f8c471 !important; /* Force transparent background */
-  color: #17202a !important;
+.navbar button {
+  border: 2px solid #e67e22;
+  background-color: #f8c471;
+  color: #17202a;
   padding: 0.5rem 2rem;
-  border-radius: 50px !important;
+  border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
   transform: translateY(-10px);
-  outline: none; /* Remove outline */
+  outline: none;
 }
 
-/* Button hover state */
-button:hover {
-  background-color: #fff4f2 !important; /* Light pink on hover */
-  color: tomato; /* Optional: change text color on hover */
+/* Change hover state to be specific too */
+.navbar button:hover {
+  background-color: #fff4f2;
+  color: tomato;
 }
 
-/* Reset any default button styles */
-button:focus {
+.navbar button:focus {
   outline: none;
   background-color: transparent;
 }
